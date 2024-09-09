@@ -1,83 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        <link rel="stylesheet" href="/src/output.css">
-    </head>
 
-    <body class="bg-gray-100">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cotizador</title>
+    <link rel="stylesheet" href="/src/output.css">
+</head>
 
-        <!--Header-->
-        <div class="container mx-auto p-8">
-            <header class="mb-8 text-center">
-                <h1 class="text-4xl font-bold mb-4">Cotiza tu Seguro</h1>
-                <p class="text-gray-700">Completa la información para calcular el costo de tu seguro.</p>
-            </header>
+<body class="bg-gray-100 ">
 
-            <!-- Formulario para la cotización -->
-            <div class="bg-white shadow-md rounded-lg p-6 pt-3 max-w-lg mx-auto">
-                <form class="mt-10 max-w-lg mx-auto " action="#" id="cotizar-seguro">
+    <!--Header-->
+    <div class="container mx-auto p-8">
+        <header class="mb-8 text-center">
+            <h1 class="text-4xl font-bold mb-4">Cotiza tu Seguro</h1>
+            <p class="text-gray-700">Completa la información para calcular el costo de tu seguro.</p>
+        </header>
 
-                    <!-- Marca -->
-                    <div class="mb-4">
-                        <label for="nombre" class="block text-gray-700">Marca</label>
-                        <select id="tipo" class="select select-bordered w-full">
-                            <option value="auto">Seguro de Auto</option>
-                            <option value="vida">Seguro de Vida</option>
-                            <option value="hogar">Seguro de Hogar</option>
-                        </select>
+        <!-- Formulario para la cotización -->
+        <div class="bg-white shadow-md rounded-lg p-6 pt-3 max-w-lg mx-auto">
+            <form class="mt-10 max-w-lg mx-auto " action="#" id="cotizar-seguro">
+
+                <!-- Marca -->
+                <div class="mb-4">
+                    <label for="nombre" class="block text-gray-700">Marca</label>
+                    <select id="marca" class="select select-bordered w-full">
+                        <option value="">Seleccionar</option>
+                        <option value="1">Americano</option>
+                        <option value="2">Asiatico</option>
+                        <option value="3">Europeo</option>
+                    </select>
+                </div>
+
+                <!-- Año -->
+                <div class="mb-4">
+                    <label for="year" class="block text-gray-700">Año</label>
+                    <select id="year" class="select select-bordered w-full"></select>
+                </div>
+
+                <!-- Tipo de Seguro -->
+                <fieldset class="rounded-lg p-2">
+                    <legend class="text-2xl font-bold text-center mb-2">Tipo de Seguro</legend>
+                    <div class="form-control text-center pt-1">
+                        <label class="label cursor-pointer flex justify-center items-center space-x-2">
+                            <span class="text-xl">Básico</span>
+                            <input type="radio" name="tipo" value="basico" class="radio checked:bg-blue-500" checked />
+                        </label>
                     </div>
 
-                    <!-- Año -->
-                    <div class="mb-4">
-                        <label for="year" class="block text-gray-700">Año</label>
-                        <select id="year" class="select select-bordered w-full"></select>
+                    <div class="form-control text-center pt-1">
+                        <label class="label cursor-pointer flex justify-center items-center space-x-2">
+                            <span class="text-xl">Completo</span>
+                            <input type="radio" name="tipo" value="completo" class="radio checked:bg-blue-500" />
+                        </label>
                     </div>
+                </fieldset>
 
-                    <!-- Tipo de Seguro -->
-                    <fieldset class="rounded-lg p-2">
-                        <legend class="text-2xl font-bold text-center mb-2">Tipo de Seguro</legend>
-                        <div class="form-control text-center pt-1">
-                            <label class="label cursor-pointer flex justify-center items-center space-x-2">
-                                <span class="text-xl">Básico</span>
-                                <input type="radio" name="radio-10" class="radio checked:bg-blue-500" checked="checked" />
-                            </label>
-                        </div>
+                <div id="cargando" class="hidden justify-center items-center ">
+                    <span class="loading loading-spinner text-success"></span>
+                </div>
 
-                        <div class="form-control text-center pt-1">
-                            <label class="label cursor-pointer flex justify-center items-center space-x-2">
-                                <span class="text-xl">Completo</span>
-                                <input type="radio" name="radio-10" class="radio checked:bg-blue-500" />
-                            </label>
-                        </div>
-                    </fieldset>
+                <div id="resultado"></div>
 
-                    <div id="cargando" class="hidden">
-                        <div class="spinner">
-                            <div class="rect1"></div>
-                            <div class="rect2"></div>
-                            <div class="rect3"></div>
-                            <div class="rect4"></div>
-                            <div class="rect5"></div>
-                        </div>
-                    </div>
+                <!-- Botón para Cotizar -->
+                <button type="submit" class="btn btn-primary w-full mt-6">Cotizar</button>
 
-
-                    <!-- Botón para Cotizar -->
-                    <button type="submit" class="btn btn-primary w-full mt-6">Cotizar</button>
-
-
-
-                    <div id="resultado" class="mt-6 text-center"></div>
-                </form>
-
-                <!-- Resultado de la Cotización -->
-
-            </div>
+            </form>
         </div>
+    </div>
 
-        <script src="script.js"></script> <!-- Enlazamos el JavaScript -->
-    </body>
+    <!--JavaScript-->
+    <script src="app.js"></script>
+</body>
 </html>
